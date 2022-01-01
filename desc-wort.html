@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="data:,">
+    <html lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>- AL -</title>
+    <link rel="shortcut icon" href="#" />
+</head>
+<body>
+
+    <nav>
+        <ul>
+        <li><a href="index.html" class="cool-link">• home •</a></li>
+        <li><a href="about.html" class="cool-link">• about •</a></li>
+        <li><a href="projects.html" class="cool-link">• projects •</a></li>
+        <li><a href="contact.html" class="cool-link">• contact •</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="bio">
+        My blog on German etymology. I write short posts about the origins of words and sayings. The site itself was built with Django with the goal of being as minimalistic as possible. Challenges included were pagination, a commentary system and a way to render images into posts.
+        <br>
+        <br>
+        I've been interested in etymology ever since I was a kid. One of my earliest memories is reading a weekly column on the local newspaper, which would tell of the origins of words and popular expressions in Portuguese. My
+        mother is also a Language major, so the topic has always been a source of much amusement at the house.
+        <br>
+        <br>
+        When I started learning German I had a goal of writing a text each day, a journey that has been documented <a href="https://langcorrect.com/account/user/alisson/journals/">here.</a>
+        Since this approach was so effective, I didn't want to stop even after completing 365 days of continuously
+        writing at Langcorrect. I started learning a bit of Django each day with the sole goal of building the blog. Luckily
+        a lot of tutorials are available online and so most of my headaches were with particular stuff I wanted
+        to implement.
+        <br>
+        <br>
+        One problem in the beginning was rendering images. Although it is possible to have images directly on the static files
+        folder, this is certainly not ideal if you want more control on where to place each image etc. I was certain there had
+        to be a way around this and searching online eventually led me to <a href="https://pythonhosted.org/django-inline-media/">django-inline-media.</a> This is a really nice project by Daniela Rus which
+        gives the user a lot more control when handling images and static files. But here's the catch, there's a much
+        easier way to do this. If one chooses to host images somewhere else and simply use the common html tag 
+        for images within the post, the command won't render it initially
+        but it does after including the <i>safe</i> filter, as in <i>{ txt | safe}</i>. This truly baffled me, curiously enough it seems like no one talks
+        about this functionality for placing images on posts.
+        <br>
+        <br>
+        Responsive design was also a major headache. Even now I feel like the site is not perfectly well built
+        in the mobile version. At least it's functional and readable, so that's gotta be a plus. You can compare
+        the layouts for yourself:
+        <br>
+        <br>
+        <img src="media/wort1.gif" width="385" height="400" style="border: 2px solid #555; border-radius: 5%;">
+        <img src="media/wort2.gif" width="195" height="400" style="border: 2px solid #555; border-radius: 5%;">
+        <br>
+        <br>
+
+        When everything was ready, I deployed it with Heroku and enabled the simplest Dyno in order to ensure SSL certification
+        was in place. There was then some consideration about moving the database to AWS, but I found it worked fine with PostGre
+        provided by Heroku, and so with all migrations in place the site was lauched on Sept. 1st of 2021. You
+        can read all the posts <a href="https://wortweise.herokuapp.com">here.</a>
+        <br>
+        <br>
+        <img src="media/wort-hallo.png" width="600" height="280" style="border: 2px solid #555; border-radius: 5%;">
+        <br>
+        <br>
+
+    </div>
+
+
+ 
+
+
+
+</body>
+
+
+
+
+
+</html>

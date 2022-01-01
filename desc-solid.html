@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="data:,">
+    <html lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>- AL -</title>
+    <link rel="shortcut icon" href="#" />
+</head>
+<body>
+
+    <nav>
+        <ul>
+        <li><a href="index.html" class="cool-link">• home •</a></li>
+        <li><a href="about.html" class="cool-link">• about •</a></li>
+        <li><a href="projects.html" class="cool-link">• projects •</a></li>
+        <li><a href="contact.html" class="cool-link">• contact •</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="bio">
+        An interactive solid visualizer. The main page is an image map with links to interactive models of the Platonic solids, the Archimedean solids and the Catalan solids. Most functionalities have been implemented with the help of three.js. Models were built using Blender 2.93.
+        <br>
+        <br>
+        The inspiration for this project was the amazing artwork by Allison Chen which I first came accross as a
+        teenager somewhere around 2015. I rememember thinking how cool would it be if there was an interactive version
+        where people could click and move the solids at will. I had at the time however no experience with programming whatsoever
+        and so this idea had to wait some good five years to finally see the light of day.
+        <br>
+        <br>
+        <img src="media/allisonchenfinal.png" width="600" height="290" style="border: 2px solid #555; border-radius: 5%;">
+        <br>
+        <br>
+        It ended up being easier than I imagined. All functionalities are already built within three.js itself, after building
+        the scene and setting up adequate lighting, the only relevant command that needs to be defined is
+        <i>const controls = new OrbitControls(camera, renderer.domElement );</i>
+        which gets updated further down inside the <i>animate( )</i> function. The models built in Blender are then
+        free to be zoomed at, moved or rotated at will.
+        <br>
+        <br>
+        <img src="media/solid1.gif" width="193" height="200" style="border: 2px solid #555;">
+        <img src="media/solid2.gif" width="193" height="200" style="border: 2px solid #555;">
+        <img src="media/solid3.gif" width="193" height="200" style="border: 2px solid #555;">
+        <br>
+        <br>
+        All platonic, archimedean and Catalan solids have been included together with a brief description of their main properties
+        on the sidebar. The gifs on the top show the tetrahedron, the truncated tetrahedron, and its dual,
+        the triakis tetrahedron. It serves as a nice example
+         to illustrate how the Archimedean solids are built from the truncation
+        of the platonic solids and how the Catalan solids in turn are simply the duals of the Archimedean ones, which
+        one can build via the Dorman Luke construction. 
+        Sadly, the artwork did not include the Kepler-Poinsot polyhedra, as these are particular 
+        stellations of the dodecahedron and icosahedron.
+
+    </div>
+
+
+ 
+
+
+
+</body>
+
+
+
+
+
+</html>

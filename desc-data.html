@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="data:,">
+    <html lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>- AL -</title>
+    <link rel="shortcut icon" href="#" />
+</head>
+<body>
+
+    <nav>
+        <ul>
+        <li><a href="index.html" class="cool-link">• home •</a></li>
+        <li><a href="about.html" class="cool-link">• about •</a></li>
+        <li><a href="projects.html" class="cool-link">• projects •</a></li>
+        <li><a href="contact.html" class="cool-link">• contact •</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="bio">
+        This was my capstone project for the Google data analytics course. I analyzed data available 
+        online about the funds destined to combat and prevent CoV-19 spread in Brasilia. My main objective 
+        has been basically to identify some of the major creditors and their related areas of actuation.
+        <br>
+        <br>
+        Since the start of the COVID-19 pandemic, the  government of Brasilia 
+        has destinated over 1.7 bi reais (300 mi usd) together with 800 mi reais (140 mi usd) received from the central government
+        to combat the spread of the virus in the capital.
+         The <a href="http://www.transparencia.df.gov.br/#/">transparency portal</a> on the government's website already provides a number of details on how 
+         major funds are being 
+         allocated with useful graph visualizations, but for the costs related to COVID this is somewhat still
+          lacking. The thing
+          I was 
+         mainly interested in was knowing who the biggest creditors were and possibly nailing down their
+          related areas of actuation.
+        <br>
+        <br>
+
+        I started by exporting the data available on the website and to generate the list of biggest creditors, I
+        ran the command with pandas on a jupyter notebook:
+        <br>
+        <br>
+        <i>
+        total_pay = df.groupby(by='Credor').agg(
+        <br>
+            lambda x: x.astype(float).sum()
+        <br>
+        )
+        <br>
+        total_pay
+        <br>
+
+        realpay = total_pay.sort_values(by=['Total Pago'], ascending=False)
+        <br>
+        realpay
+        <br>
+        <br>
+        </i>
+
+
+        
+        This wasn't so easy to figure it out and the correct syntax was only realized after digging out a
+        little. The main challenge was discovering a way to sum all repeated values in the dataframe and
+        afterwards group all of them in descending order.
+        An alternative considered was the following piece of code in R which achieves the same thing:
+        <br>
+        <br>
+        <i>
+            df <- data.table(df)
+            <br>
+            df[ , .(val= sum(val)), by = "Credor" ]
+        </i>
+        <br>
+        <br>
+        Next I selected the first 10 biggest creditors in order to break down their areas of actuation.
+        The pie chart in the picture below shows that no major amount of funds is being destined to a sole
+        creditor, with the biggest share pertaining to a sector of the government (1). The other creditors
+        are shown in this <a href="media/data-table1.png">table.</a>
+        <br>
+        <br>
+        <img src="media/data-graph1.png" width="600" height="290" style="border: 2px solid #555; border-radius: 5%;">
+        <br>
+        <br>
+        One thing worth pointing out is that although marketing(6) only constitutes a small fraction
+         of the pie chart, the costs related to it surpass for instance those spent with 
+         social pension(8) as can be noted in the bar graph above. Although marketing is certainly a 
+         worthwhile investment, since people need to be kept up to date with the latest news and 
+         governments endeavours during the pandemic, one might wonder if the cost isn't a little 
+         too saturated. 
+        <br>
+        <br>
+        The same analysis can be carried out for the resources that were allocated with the money
+        received from the central government. The table of creditors can be found <a href="data-table2.png">here</a>
+        and the results are expressed in the graphs below.
+        
+
+        <br>
+        <br>
+        <img src="media/data-graph2.png" width="600" height="290" style="border: 2px solid #555; border-radius: 5%;">
+        <br>
+        <br>
+        As expected, the biggest creditors are the same as the ones before, but this time BINDER F.C
+        is not present in the top ten. This might indicate that no money from the central govt. was used for
+         marketing. Confirmation of this might be found in the list 
+         of <a href="http://www.coronavirus.df.gov.br/index.php/contratacoes/">emergency contracts</a>
+          that were closed during the pandemic 
+         and already provides a big list of creditors.
+         <br>
+         <br>
+        As a final analysis, I took the data that was allocated for specific purposes and generated the graphs
+        below. We note that most of the resources were allocated to services related to food (87.7%)
+        with the rest being destined to mobility (7.4%), emergency aid (3.7%) and cultural and artistic related costs
+        (1.2%). 
+        <br>
+        <br>
+        <img src="media/data-graph3.png" width="600" height="290" style="border: 2px solid #555; border-radius: 5%;">
+        
+
+
+    </div>
+
+ 
+
+
+
+</body>
+
+
+
+
+
+</html>
