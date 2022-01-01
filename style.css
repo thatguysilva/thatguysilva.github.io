@@ -83,6 +83,26 @@ li a {
 
 }
 
+.alt{
+    text-align: justify;
+    margin: 5vw 0 0 24vw;
+    min-width: 250px;
+    width: 45%;
+    font-family: 'Lora', Georgia, serif;
+    color: #F9F6EE;
+
+}
+
+.alt2{
+    text-align: justify;
+    margin: 5vw 0 0 24vw;
+    width: 45%;
+    font-family: 'Lora', Georgia, serif;
+    color: #F9F6EE;
+
+}
+
+
 .bio-sub{
     position: absolute;
     margin: -14vw 0 0 18vw;
