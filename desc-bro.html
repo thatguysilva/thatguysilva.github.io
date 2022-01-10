@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="data:,">
+    <html lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>- AL -</title>
+    <link rel="shortcut icon" href="#" />
+</head>
+<body>
+
+    <nav>
+        <ul>
+        <li><a href="index.html" class="cool-link">• home •</a></li>
+        <li><a href="about.html" class="cool-link">• about •</a></li>
+        <li><a href="projects.html" class="cool-link">• projects •</a></li>
+        <li><a href="contact.html" class="cool-link">• contact •</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="bio">
+        A lightweight browser built with QtWebEngine. The main inspiration was the Mozzarella Ashbadger browser presented in the book <i>Create GUI Applications with Python & Qt6</i> by Martin Fitzpatrick. I added the functionality to switch to the TOR browser.
+        <br>
+        <br>
+        Creating a browser is easier than it seems. I was very surprise
+        to find out that Qt has its own web module while reading the book
+        by Fitzpatrick, this is something that is extremely useful. More information on the module
+        can be found <a href="https://doc.qt.io/qt-5/qtwebengine-overview.html">here</a>, it is based on the Chromium project.
+         The Mozzarella Ashbadger browser itself
+        is a fun implementation to showcase the capabilities of Qt.
+        My version is minimal,
+        most functionalities can be traced to the <i>setUrl</i> command. There
+        are other things too, but they have mainly to do with design.
+        <br>
+        <br>
+        
+        One
+        addition I thought would be fun to implement was a button to switch to
+        the TOR browser. This was done with the webbrowser package and is as
+        simple as registering the browser at the beginning of the code with:
+        <br>
+        <br>
+        <i>webbrowser.register("tor", None, webbrowser.BackgroundBrowser(tor_path))</i>
+        <br>
+        <br>
+        
+        <img src="media/bro-tor.gif" width="600" height="290" style="border: 2px solid #555; border-radius: 5%;">
+        <br>
+        <br>
+
+        
+
+
+    </div>
+
+ 
+
+
+
+</body>
+
+
+
+
+
+</html>
